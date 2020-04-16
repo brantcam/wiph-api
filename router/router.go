@@ -10,8 +10,6 @@ import (
 // New ...
 func New() *mux.Router {
 	r := mux.NewRouter()
-
 	r.Methods(http.MethodGet).Path("/hello-world").Handler(handlers.HelloWorld())
-
 	return r
 }
