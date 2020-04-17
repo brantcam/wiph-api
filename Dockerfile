@@ -11,6 +11,6 @@ RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build
 
 
 FROM alpine:latest
-COPY --from=builder . .
+COPY --from=builder /app .
 EXPOSE 8080
-ENTRYPOINT ["/app/wiph-api"]
+CMD [ "./wiph-api" ]

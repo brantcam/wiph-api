@@ -1,6 +1,7 @@
 package main
 
 import (
+	"context"
 	"log"
 	"net/http"
 	"wiph-api/config"
@@ -10,11 +11,12 @@ import (
 )
 
 func main() {
+	ctx := context.Background()
 	c, err := config.LoadConfigFromEnv()
 	if err != nil {
 		log.Fatal(err)
 	}
-	db, err := postgres.New(c.Postgres)
+	db, err := postgres.New(ctx, c.Postgres)
 	if err != nil {
 		log.Fatal(err)
 	}

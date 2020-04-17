@@ -19,7 +19,7 @@ func LoadConfigFromEnv() (*Config, error) {
 		return nil, err
 	}
 	c := new(Config)
-	if err := json.Unmarshal(buf, &c); err != nil {
+	if err := json.Unmarshal(buf, &c.Postgres); err != nil {
 		return nil, err
 	}
 
