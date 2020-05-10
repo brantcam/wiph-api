@@ -8,7 +8,7 @@ import (
 // HelloWorld ...
 func HelloWorld() http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
-		writeJSONResponse(w, http.StatusOK, "hello, world!")
+		writeJSONResponse(w, http.StatusOK, "I love you, mom!")
 	}
 }
 
